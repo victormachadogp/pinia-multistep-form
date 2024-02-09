@@ -1,19 +1,51 @@
-<script setup>
-</script>
-
 <template>
   <main class="main">
-    Content
+    <!-- <img class="form-image" src="../assets/almond_blossom.jpeg" alt=""> -->
+    <div class="form-image-wrapper">
+
+    </div>
+    <section class="form">
+      <div>
+        <label for="name">First Name</label>
+        <input name="name" />
+      </div>
+      <div>
+        <label for="last-name">Last Name</label>
+        <input name="last-name" />
+      </div>
+    </section>
+
   </main>
 </template>
 
-<style scoped>
+<script setup>
+</script>
 
-@media (min-width: 1024px) {
-  .main {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+
+<style scoped>
+ .main {
+  display: flex;
+  justify-content: center;
+    background-color: white;
+    /* max-width: 1100px; */
+    height: 500px;
+    border-radius: 10px;
   }
-}
+
+  .form-image-wrapper {
+    width: 300px;
+    height: 100%;
+    background-image: url("../assets/almond_blossom.jpeg");
+    background-size: cover;
+  }
+/* 
+  .form-image {
+    width: 100%;
+    max-width: 200px;
+  } */
+
+  .form {
+    width: 700px;
+  }
+
 </style>

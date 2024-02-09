@@ -1,24 +1,27 @@
 <script setup>
-// import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
     <div class="wrapper">
-
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
+      <RouterView />
     </div>
-  </header>
 
-  <RouterView />
 </template>
 
-<style scoped>
+<style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #f7f7f9;
+}
+
+.wrapper {
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>
