@@ -35,13 +35,13 @@
           <div class="sm:col-span-1">
             <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
             <div class="mt-2.5">
-              <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <input v-model="email" type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
             </div>
           </div>
           <div class="sm:col-span-1">
             <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
             <div class="mt-2.5">
-              <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <input v-model="phone" type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
             </div>
           </div>
         
@@ -66,7 +66,7 @@ import { storeToRefs } from "pinia"
 
 const formStore = useFormStore()
 
-const { name, lastName } = storeToRefs( formStore )
+const { name, lastName, email, phone } = storeToRefs( formStore )
 
 const handleSubmit = () => {
   formStore.updateName(name)
