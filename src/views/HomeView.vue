@@ -6,10 +6,11 @@
 
     </div>
     <section class="form">
-      <h1>{{formStore.name}}</h1>
+      <h1 class="text-red-500">{{formStore.name}}</h1>
+      <h1>{{formStore.lastName}}</h1>
       <div>
         <label for="name">First Name</label>
-        <input v-model="nameInput" name="name" />
+        <input v-model="name" name="name" />
       </div>
       <div>
         <label for="last-name">Last Name</label>
@@ -31,15 +32,11 @@ const formStore = useFormStore()
 
 const { name, lastName } = storeToRefs( formStore )
 
-const nameInput = ref("")
-
 const handleSubmit = () => {
-  formStore.updateName(nameInput.value)
-  nameInput.value = ""
+  formStore.updateName(name)
+
+  console.log(formStore.$state)
 }
-
-
-
 
 </script>
 

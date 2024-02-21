@@ -5,9 +5,10 @@
 
     </div>
     <section class="form">
+      <h1>{{formStore.location}}</h1>
       <div>
         <label for="location">Location</label>
-        <input name="location"/>
+        <input v-model="location" name="location"/>
       </div>
     </section>
 
@@ -15,6 +16,19 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useFormStore } from '@/stores/form'
+import { storeToRefs } from "pinia"
+
+const formStore = useFormStore()
+
+const { location } = storeToRefs( formStore )
+
+const handleSubmit = () => {
+  formStore.updateName(location)
+
+  console.log(formStore.$state)
+}
 </script>
 
 
