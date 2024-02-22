@@ -50,7 +50,9 @@
           <div class="border-t border-gray-300 mt-24"></div>
 
         <div class="mt-8 flex justify-end">
+              <router-link to="/about">Go to About
           <button @click="handleSubmit" type="submit" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Next Step</button>
+          </router-link>
         </div>
       </div>
     </form>
