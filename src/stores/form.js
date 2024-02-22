@@ -6,12 +6,12 @@ export const useFormStore = defineStore('form', () => {
   const lastName = ref("")
   const email = ref("")
   const phone = ref("")
-  const location = ref("")
-
+  const message = ref("")
+  const pickedOption = ref("")
 
   function updateName(e) { 
     name.value = e
   }
 
-  return { name, lastName, email, phone, location, updateName }
+  return { name, lastName, email, phone, message, pickedOption, updateName }
 })
