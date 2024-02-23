@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/subscription',
       name: 'subscription',
       component: () => import('../views/SubscriptionType.vue')
+    },
+    {
+      path: '/confirmation',
+      name: 'confirmation',
+      component: () => import('../views/ConfirmationPage.vue')
     }
   ]
 })
