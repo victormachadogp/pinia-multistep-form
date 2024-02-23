@@ -14,5 +14,10 @@ export const useFormStore = defineStore('form', () => {
     name.value = e
   }
 
-  return { name, lastName, email, phone, message, pickedOption, subscriptionOption, updateName }
+  const fullName = computed(() =>  {
+    return `${name.value} ${lastName.value}`
+  })
+  
+
+  return { name, lastName, email, phone, message, pickedOption, subscriptionOption, updateName, fullName }
 })
