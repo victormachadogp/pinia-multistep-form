@@ -70,16 +70,10 @@
                <div class="border-t border-gray-300 mt-24"></div>
 
                <div class="mt-8 flex justify-end">
-                  <router-link to="/about"
-                     >Go to About
-                     <button
-                        @click="handleSubmit"
-                        type="submit"
-                        class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                     >
-                        Next Step
-                     </button>
+                  <router-link to="/about">
+                     <DynamicSubmitButton />
                   </router-link>
+                  
                </div>
             </div>
          </form>
@@ -88,19 +82,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useFormStore } from "@/stores/form";
-import { storeToRefs } from "pinia";
+import { ref } from "vue"
+import { useFormStore } from "@/stores/form"
+import { storeToRefs } from "pinia"
+import DynamicSubmitButton from "@/components/DynamicSubmitButton.vue"
 
-const formStore = useFormStore();
+const formStore = useFormStore()
 
-const { name, lastName, email, phone } = storeToRefs(formStore);
+const { name, lastName, email, phone } = storeToRefs(formStore)
 
 const handleSubmit = () => {
-   formStore.updateName(name);
+   formStore.updateName(name)
 
-   console.log(formStore.$state);
-};
+   console.log(formStore.$state)
+}
 </script>
 
 

@@ -17,7 +17,11 @@
                      <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                         <span class="flex-grow">{{ fullName }}</span>
                         <span class="ml-4 flex-shrink-0">
-                           <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+                           <router-link to="/">
+                              <button @click="updateInfo" type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">
+                                 Update
+                              </button>
+                           </router-link>
                         </span>
                      </dd>
                   </div>
@@ -76,13 +80,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useFormStore } from "@/stores/form";
-import { storeToRefs } from "pinia";
+import { ref } from "vue"
+import { useFormStore } from "@/stores/form"
+import { storeToRefs } from "pinia"
 
-const formStore = useFormStore();
+const formStore = useFormStore()
 
-const { name, lastName, email, phone, message, pickedOption, subscriptionOption, fullName } = storeToRefs(formStore);
+const { name, lastName, email, phone, message, pickedOption, subscriptionOption, updatingInfo, fullName  } = storeToRefs(formStore)
+
+const updateInfo = function () {
+   updatingInfo.value = true
+}
 </script>
 
 <style scoped>
