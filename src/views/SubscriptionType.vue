@@ -127,25 +127,37 @@
                   </label>
                </div>
             </fieldset>
+
+            <div class="border-t border-gray-300 mt-24"></div>
+
+            <div class="mt-8 flex justify-end items-center">
+               <router-link to="/about">
+                  <button class="text-gray-400 mx-5 font-medium">Go Back</button>
+               </router-link>
+               <router-link to="/confirmation">
+                  <DynamicSubmitButton />
+               </router-link>
+            </div>
          </div>
       </section>
    </main>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useFormStore } from "@/stores/form";
-import { storeToRefs } from "pinia";
+import { ref } from "vue"
+import { useFormStore } from "@/stores/form"
+import { storeToRefs } from "pinia"
+import DynamicSubmitButton from "@/components/DynamicSubmitButton.vue"
 
-const formStore = useFormStore();
+const formStore = useFormStore()
 
-const { subscriptionOption } = storeToRefs(formStore);
+const { subscriptionOption } = storeToRefs(formStore)
 
 const handleSubmit = () => {
-   formStore.updateName(location);
+   formStore.updateName(location)
 
-   console.log(formStore.$state);
-};
+   console.log(formStore.$state)
+}
 </script>
 
 

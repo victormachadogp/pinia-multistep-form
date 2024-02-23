@@ -73,7 +73,6 @@
                   <router-link to="/about">
                      <DynamicSubmitButton />
                   </router-link>
-                  
                </div>
             </div>
          </form>
