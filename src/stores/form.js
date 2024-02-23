@@ -8,10 +8,11 @@ export const useFormStore = defineStore('form', () => {
   const phone = ref("")
   const message = ref("")
   const pickedOption = ref("")
+  const subscriptionOption = ref("")
 
   function updateName(e) { 
     name.value = e
   }
 
-  return { name, lastName, email, phone, message, pickedOption, updateName }
+  return { name, lastName, email, phone, message, pickedOption, subscriptionOption, updateName }
 })
