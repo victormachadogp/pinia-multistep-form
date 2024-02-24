@@ -46,7 +46,7 @@
                   <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                      <dt class="text-sm font-medium leading-6 text-gray-900">Message</dt>
                      <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                        <span class="flex-grow">{{ message }}.</span>
+                        <span class="flex-grow">{{ truncatedMessage }}</span>
                         <span class="ml-4 flex-shrink-0">
                            <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
                         </span>
@@ -95,7 +95,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { useFormStore } from "@/stores/form"
 import { storeToRefs } from "pinia"
 
@@ -106,6 +106,13 @@ const { name, lastName, email, phone, message, pickedOption, subscriptionOption,
 const updateInfo = function () {
    updatingInfo.value = true
 }
+
+const truncatedMessage = computed(() => {
+   const words = message.value.split(" ")
+   const maxWords = 10
+
+   return words.slice(0, maxWords).join(" ") + "..."
+})
 </script>
 
 <style scoped>
@@ -114,7 +121,7 @@ const updateInfo = function () {
    justify-content: center;
    background-color: white;
    /* max-width: 1100px; */
-   height: 500px;
+   height: 650px;
    border-radius: 10px;
 }
 
