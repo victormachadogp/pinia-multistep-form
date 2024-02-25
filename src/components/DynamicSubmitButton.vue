@@ -1,5 +1,5 @@
 <template>
-   <div v-if="!updatingInfo">   
+   <div v-if="!updatingInfo">
       <button
          @click="handleSubmitFunction"
          type="button"
@@ -7,18 +7,17 @@
       >
          Next Step
       </button>
-      
    </div>
-   
+
    <div v-else>
-      <router-link to="/confirmation">
-      <button
-         @click="handleSubmitFunction"
-         type="button"
-         class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-         Finish Update
-      </button>
+      <router-link to="/review-details">
+         <button
+            @click="handleSubmitFunction"
+            type="button"
+            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+         >
+            Finish Update
+         </button>
       </router-link>
    </div>
 </template>
@@ -32,12 +31,9 @@ const formStore = useFormStore()
 
 const { updatingInfo } = storeToRefs(formStore)
 
-const handleSubmitFunction = function() {
+const handleSubmitFunction = function () {
    updatingInfo.value = false
 }
-
-
-
 </script>
 
 <style scoped>

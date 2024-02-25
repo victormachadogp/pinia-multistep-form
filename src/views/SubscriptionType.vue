@@ -137,7 +137,7 @@
                   <router-link to="/about">
                      <button class="text-gray-400 mx-5 font-medium">Go Back</button>
                   </router-link>
-                  <router-link to="/confirmation">
+                  <router-link to="/review-details">
                      <DynamicSubmitButton />
                   </router-link>
                </div>

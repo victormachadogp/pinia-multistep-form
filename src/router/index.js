@@ -23,9 +23,9 @@ const router = createRouter({
       component: () => import('../views/SubscriptionType.vue')
     },
     {
-      path: '/confirmation',
-      name: 'confirmation',
-      component: () => import('../views/ConfirmationPage.vue')
+      path: '/review-details',
+      name: 'review-details',
+      component: () => import('../views/ReviewDetails.vue')
     }
   ]
 })
