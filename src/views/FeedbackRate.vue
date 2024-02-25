@@ -5,9 +5,9 @@
       <section class="form flex flex-col justify-between">
          <div>
             <div class="mx-auto max-w-lg pt-10">
-               <h1 class="text-2xl mb-2">Subscription Type</h1>
+               <h1 class="text-2xl mb-2">Share Your Feedback</h1>
 
-               <p class="text-sm text-gray-400">Please provide your name, email addres, and phone number.</p>
+               <p class="text-sm text-gray-400">Your Feedback Is Valued and Appreciated, Thank You.</p>
             </div>
 
             <div class="mx-auto max-w-lg pt-10">
