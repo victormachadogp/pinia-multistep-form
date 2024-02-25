@@ -101,11 +101,11 @@
                      </div>
 
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt class="text-sm font-medium leading-6 text-gray-900">Subscription Option</dt>
+                        <dt class="text-sm font-medium leading-6 text-gray-900">Feedback Rate</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ subscriptionOption }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <router-link to="/subscription">
+                              <router-link to="/feedback-rate">
                                  <button
                                     @click="updateInfo"
                                     type="button"
@@ -125,7 +125,7 @@
          <div class="mx-auto max-w-lg w-full pb-10">
             <div class="flex justify-end border-t border-gray-300">
                <div class="flex items-center mt-10">
-                  <router-link to="/subscription">
+                  <router-link to="/feedback-rate">
                      <button class="text-gray-400 mx-5 font-medium">Go Back</button>
                   </router-link>
                   <router-link to="#">

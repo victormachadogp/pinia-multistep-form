@@ -12,30 +12,29 @@
 
             <div class="mx-auto max-w-lg pt-10">
                <fieldset>
-                  <legend class="text-base font-semibold leading-6 text-gray-900">Select a mailing list</legend>
+                  <legend class="text-base font-semibold leading-6 text-gray-900">Feedback Rating</legend>
 
                   <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
                      <!-- Active: "border-indigo-600 ring-2 ring-indigo-600", Not Active: "border-gray-300" -->
                      <label
-                        :class="{ active: subscriptionOption === 'Newsletter' }"
+                        :class="{ active: subscriptionOption === 'Fair' }"
                         class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                      >
                         <input
                            v-model="subscriptionOption"
                            type="radio"
-                           name="project-type"
-                           value="Newsletter"
+                           name="feedback-rating"
+                           value="Fair"
                            class="sr-only"
-                           aria-labelledby="project-type-0-label"
-                           aria-describedby="project-type-0-description-0 project-type-0-description-1"
+                           aria-labelledby="feedback-rating-0-label"
+                           aria-describedby="feedback-rating-0-description-0 feedback-rating-0-description-1"
                         />
                         <span class="flex flex-1">
                            <span class="flex flex-col">
-                              <span id="project-type-0-label" class="block text-sm font-medium text-gray-900">Newsletter</span>
-                              <span id="project-type-0-description-0" class="mt-1 flex items-center text-sm text-gray-500"
-                                 >Last message sent an hour ago</span
+                              <span id="feedback-rating-0-label" class="block text-sm font-medium text-gray-900">Fair</span>
+                              <span id="feedback-rating-0-description-0" class="mt-1 flex items-center text-sm text-gray-500"
+                                 >Average experience, room for improvement</span
                               >
-                              <span id="project-type-0-description-1" class="mt-6 text-sm font-medium text-gray-900">621 users</span>
                            </span>
                         </span>
                         <!-- Not Checked: "invisible" -->
@@ -54,25 +53,24 @@
                      </label>
                      <!-- Active: "border-indigo-600 ring-2 ring-indigo-600", Not Active: "border-gray-300" -->
                      <label
-                        :class="{ active: subscriptionOption === 'Existing Customers' }"
+                        :class="{ active: subscriptionOption === 'Good' }"
                         class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                      >
                         <input
                            v-model="subscriptionOption"
                            type="radio"
-                           name="project-type"
-                           value="Existing Customers"
+                           name="feedback-rating"
+                           value="Good"
                            class="sr-only"
-                           aria-labelledby="project-type-1-label"
-                           aria-describedby="project-type-1-description-0 project-type-1-description-1"
+                           aria-labelledby="feedback-rating-1-label"
+                           aria-describedby="feedback-rating-1-description-0 feedback-rating-1-description-1"
                         />
                         <span class="flex flex-1">
                            <span class="flex flex-col">
-                              <span id="project-type-1-label" class="block text-sm font-medium text-gray-900">Existing Customers</span>
-                              <span id="project-type-1-description-0" class="mt-1 flex items-center text-sm text-gray-500"
-                                 >Last message sent 2 weeks ago</span
+                              <span id="feedback-rating-1-label" class="block text-sm font-medium text-gray-900">Good</span>
+                              <span id="feedback-rating-1-description-0" class="mt-1 flex items-center text-sm text-gray-500"
+                                 >Satisfactory experience, met expectations</span
                               >
-                              <span id="project-type-1-description-1" class="mt-6 text-sm font-medium text-gray-900">1200 users</span>
                            </span>
                         </span>
                         <!-- Not Checked: "invisible" -->
@@ -91,25 +89,24 @@
                      </label>
                      <!-- Active: "border-indigo-600 ring-2 ring-indigo-600", Not Active: "border-gray-300" -->
                      <label
-                        :class="{ active: subscriptionOption === 'Trial Users' }"
+                        :class="{ active: subscriptionOption === 'Excellent' }"
                         class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                      >
                         <input
                            v-model="subscriptionOption"
                            type="radio"
-                           name="project-type"
-                           value="Trial Users"
+                           name="feedback-rating"
+                           value="Excellent"
                            class="sr-only"
-                           aria-labelledby="project-type-2-label"
-                           aria-describedby="project-type-2-description-0 project-type-2-description-1"
+                           aria-labelledby="feedback-rating-2-label"
+                           aria-describedby="feedback-rating-2-description-0 feedback-rating-2-description-1"
                         />
                         <span class="flex flex-1">
                            <span class="flex flex-col">
-                              <span id="project-type-2-label" class="block text-sm font-medium text-gray-900">Trial Users</span>
-                              <span id="project-type-2-description-0" class="mt-1 flex items-center text-sm text-gray-500"
-                                 >Last message sent 4 days ago</span
+                              <span id="feedback-rating-2-label" class="block text-sm font-medium text-gray-900">Excellent</span>
+                              <span id="feedback-rating-2-description-0" class="mt-1 flex items-center text-sm text-gray-500"
+                                 >Outstanding service, exceeded expectations</span
                               >
-                              <span id="project-type-2-description-1" class="mt-6 text-sm font-medium text-gray-900">2740 users</span>
                            </span>
                         </span>
                         <!-- Not Checked: "invisible" -->

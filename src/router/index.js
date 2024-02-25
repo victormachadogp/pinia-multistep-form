@@ -18,9 +18,9 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/subscription',
-      name: 'subscription',
-      component: () => import('../views/SubscriptionType.vue')
+      path: '/feedback-rate',
+      name: 'feedback-rate',
+      component: () => import('../views/FeedbackRate.vue')
     },
     {
       path: '/review-details',

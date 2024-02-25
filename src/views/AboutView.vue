@@ -72,7 +72,7 @@
                   <router-link to="/">
                      <button class="text-gray-400 mx-5 font-medium">Go Back</button>
                   </router-link>
-                  <router-link to="/subscription">
+                  <router-link to="/feedback-rate">
                      <DynamicSubmitButton />
                   </router-link>
                </div>
