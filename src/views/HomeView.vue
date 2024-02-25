@@ -2,7 +2,7 @@
    <main class="main">
       <!-- <img class="form-image" src="../assets/almond_blossom.jpeg" alt=""> -->
 
-      <div class="form-image-wrapper"></div>
+      <Stepper />
       <section class="form flex flex-col justify-between">
          <div class="">
             <div class="mx-auto max-w-lg pt-10">
@@ -87,6 +87,7 @@ import { ref } from "vue"
 import { useFormStore } from "@/stores/form"
 import { storeToRefs } from "pinia"
 import DynamicSubmitButton from "@/components/DynamicSubmitButton.vue"
+import Stepper from "@/components/Stepper.vue"
 
 const formStore = useFormStore()
 
@@ -110,12 +111,6 @@ const handleSubmit = () => {
    border-radius: 10px;
 }
 
-.form-image-wrapper {
-   width: 300px;
-   height: 100%;
-   background-image: url("../assets/almond_blossom.jpeg");
-   background-size: cover;
-}
 /* 
   .form-image {
     width: 100%;
