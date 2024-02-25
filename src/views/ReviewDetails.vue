@@ -69,7 +69,7 @@
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ truncatedMessage }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <router-link to="/about">
+                              <router-link to="/feedback-preferences">
                                  <button
                                     @click="updateInfo"
                                     type="button"
@@ -87,7 +87,7 @@
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ pickedOption }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <router-link to="/about">
+                              <router-link to="/feedback-preferences">
                                  <button
                                     @click="updateInfo"
                                     type="button"

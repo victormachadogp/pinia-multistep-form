@@ -73,7 +73,7 @@
 
          <div class="mx-auto max-w-lg w-full pb-10">
             <div class="flex justify-end border-t border-gray-300">
-               <router-link class="mt-10" to="/about">
+               <router-link class="mt-10" to="/feedback-preferences">
                   <DynamicSubmitButton />
                </router-link>
             </div>

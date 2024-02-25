@@ -5,9 +5,9 @@
       <section class="form flex flex-col justify-between">
          <div>
             <div class="mx-auto max-w-lg pt-10">
-               <h1 class="text-2xl mb-2">Personal Info</h1>
+               <h1 class="text-2xl mb-2">Feedback & Preferences</h1>
 
-               <p class="text-sm text-gray-400">Please provide your name, email addres, and phone number.</p>
+               <p class="text-sm text-gray-400">Please share your thoughts and preferences.</p>
             </div>
 
             <div class="mx-auto max-w-lg pt-10">
