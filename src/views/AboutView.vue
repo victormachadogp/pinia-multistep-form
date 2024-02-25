@@ -34,7 +34,7 @@
                               id="email"
                               name="notification-method"
                               type="radio"
-                              value="email"
+                              value="Email"
                               class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                            />
                            <label for="email" class="ml-3 block text-sm font-medium leading-6 text-gray-900">Email</label>
@@ -44,7 +44,7 @@
                               v-model="pickedOption"
                               id="sms"
                               name="notification-method"
-                              value="sms"
+                              value="SMS"
                               type="radio"
                               class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                            />
@@ -53,13 +53,13 @@
                         <div class="flex items-center">
                            <input
                               v-model="pickedOption"
-                              id="push"
+                              id="no-contact"
                               name="notification-method"
-                              value="push"
+                              value="No Notifications"
                               type="radio"
                               class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                            />
-                           <label for="push" class="ml-3 block text-sm font-medium leading-6 text-gray-900">Push notification</label>
+                           <label for="no-contact" class="ml-3 block text-sm font-medium leading-6 text-gray-900">Do not send notifications</label>
                         </div>
                      </div>
                   </fieldset>
