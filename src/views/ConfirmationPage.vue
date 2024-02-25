@@ -79,21 +79,6 @@
                      </div>
                   </dl>
                </div>
-
-               <!-- <div class="border-t border-gray-300 mt-24"></div>
-
-            <div class="mt-8 flex justify-end items-center">
-               <router-link to="/subscription">
-                  <button class="text-gray-400 mx-5 font-medium">Go Back</button>
-               </router-link>
-               <button
-                  @click="handleSubmitFunction"
-                  type="button"
-                  class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-               >
-                  Next Step
-               </button>
-            </div> -->
             </div>
          </div>
 
