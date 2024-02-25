@@ -35,7 +35,15 @@
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ email }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+                              <router-link to="/">
+                                 <button
+                                    @click="updateInfo"
+                                    type="button"
+                                    class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500"
+                                 >
+                                    Update
+                                 </button>
+                              </router-link>
                            </span>
                         </dd>
                      </div>
@@ -44,7 +52,15 @@
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ phone }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+                              <router-link to="/">
+                                 <button
+                                    @click="updateInfo"
+                                    type="button"
+                                    class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500"
+                                 >
+                                    Update
+                                 </button>
+                              </router-link>
                            </span>
                         </dd>
                      </div>
@@ -53,7 +69,15 @@
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ truncatedMessage }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+                              <router-link to="/about">
+                                 <button
+                                    @click="updateInfo"
+                                    type="button"
+                                    class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500"
+                                 >
+                                    Update
+                                 </button>
+                              </router-link>
                            </span>
                         </dd>
                      </div>
@@ -63,7 +87,15 @@
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ pickedOption }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+                              <router-link to="/about">
+                                 <button
+                                    @click="updateInfo"
+                                    type="button"
+                                    class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500"
+                                 >
+                                    Update
+                                 </button>
+                              </router-link>
                            </span>
                         </dd>
                      </div>
@@ -73,7 +105,15 @@
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                            <span class="flex-grow">{{ subscriptionOption }}</span>
                            <span class="ml-4 flex-shrink-0">
-                              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+                              <router-link to="/subscription">
+                                 <button
+                                    @click="updateInfo"
+                                    type="button"
+                                    class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500"
+                                 >
+                                    Update
+                                 </button>
+                              </router-link>
                            </span>
                         </dd>
                      </div>
