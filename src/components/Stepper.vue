@@ -50,7 +50,6 @@
 </template>
 
 <script setup>
-import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router"
 import { useRouter, useRoute } from "vue-router"
 import { ref, onMounted } from "vue"
 
@@ -77,30 +76,6 @@ onMounted(() => {
       step.status = "complete"
    })
 })
-
-// console.log(route.path)
-// console.log(router)
-
-// onBeforeRouteUpdate(async (to, from) => {
-//    // Reset all steps to "upcoming"
-//    steps.forEach((step) => {
-//       step.status = "upcoming"
-//    })
-
-//    // Set the current step based on the current route
-//    const currentStep = steps.find((step) => step.href === to.path)
-//    if (currentStep) {
-//       currentStep.status = "current"
-//    }
-
-//    // Set the previous step to "complete" if needed
-//    const previousStep = steps.find((step) => step.href === from.path)
-//    if (previousStep && from.path === "/") {
-//       previousStep.status = "complete"
-//    }
-
-//    next()
-// })
 </script>
 
 <style scoped>
