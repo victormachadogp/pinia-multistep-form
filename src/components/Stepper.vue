@@ -50,12 +50,57 @@
 </template>
 
 <script setup>
-const steps = [
+import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router"
+import { useRouter, useRoute } from "vue-router"
+import { ref, onMounted } from "vue"
+
+const steps = ref([
    { name: "Personal Info", href: "/", status: "current" },
    { name: "Feedback & Preferences", href: "/feedback-preferences", status: "upcoming" },
    { name: "Share Your Feedback", href: "/feedback-rate", status: "upcoming" },
    { name: "Review", href: "/review-details", status: "upcoming" },
-]
+])
+
+const router = useRouter()
+const route = useRoute()
+
+onMounted(() => {
+   const currentStepIndex = steps.value.findIndex((step) => step.href === route.path)
+
+   // Set the current step to "current"
+   if (currentStepIndex !== -1) {
+      steps.value[currentStepIndex].status = "current"
+   }
+
+   // Set all steps before the current step to "complete"
+   steps.value.slice(0, currentStepIndex).forEach((step) => {
+      step.status = "complete"
+   })
+})
+
+// console.log(route.path)
+// console.log(router)
+
+// onBeforeRouteUpdate(async (to, from) => {
+//    // Reset all steps to "upcoming"
+//    steps.forEach((step) => {
+//       step.status = "upcoming"
+//    })
+
+//    // Set the current step based on the current route
+//    const currentStep = steps.find((step) => step.href === to.path)
+//    if (currentStep) {
+//       currentStep.status = "current"
+//    }
+
+//    // Set the previous step to "complete" if needed
+//    const previousStep = steps.find((step) => step.href === from.path)
+//    if (previousStep && from.path === "/") {
+//       previousStep.status = "complete"
+//    }
+
+//    next()
+// })
 </script>
 
 <style scoped>
