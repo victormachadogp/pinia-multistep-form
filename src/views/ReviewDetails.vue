@@ -1,7 +1,7 @@
 <template>
    <main class="main">
       <!-- <img class="form-image" src="../assets/almond_blossom.jpeg" alt=""> -->
-      <div class="form-image-wrapper"></div>
+      <Stepper />
       <section class="form flex flex-col justify-between">
          <div class="mx-auto max-w-lg pt-10">
             <div>
@@ -148,6 +148,7 @@
 import { ref, computed } from "vue"
 import { useFormStore } from "@/stores/form"
 import { storeToRefs } from "pinia"
+import Stepper from "@/components/Stepper.vue"
 
 const formStore = useFormStore()
 
