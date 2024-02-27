@@ -163,30 +163,11 @@ const handleSubmit = () => {
 
 
 <style scoped>
-.main {
-   display: flex;
-   justify-content: center;
-   background-color: white;
-   /* max-width: 1100px; */
-   height: 650px;
-   border-radius: 10px;
-}
-
 .active {
    @apply border-indigo-600 ring-2 ring-indigo-600;
 }
 
 .active svg {
    @apply visible;
-}
-
-/* 
-  .form-image {
-    width: 100%;
-    max-width: 200px;
-  } */
-
-.form {
-   width: 700px;
 }
 </style>
