@@ -70,7 +70,7 @@
          </div>
 
          <div class="mx-auto max-w-lg w-full pb-10">
-            <div class="flex justify-end border-t border-gray-300">
+            <div class="flex justify-end border-t border-gray-300 mt-12 md:mt-0">
                <router-link class="mt-10" to="/feedback-preferences">
                   <DynamicSubmitButton />
                </router-link>

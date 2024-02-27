@@ -66,7 +66,7 @@
             </div>
          </div>
          <div class="mx-auto max-w-lg w-full pb-10">
-            <div class="flex justify-end border-t border-gray-300">
+            <div class="flex justify-end border-t border-gray-300 mt-12 md:mt-0">
                <div class="flex items-center mt-10">
                   <router-link to="/">
                      <button class="text-gray-400 mx-5 font-medium">Go Back</button>
