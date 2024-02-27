@@ -1,6 +1,6 @@
 <template>
    <div class="md:p-5">
-      <div class="form-image-wrapper rounded-xl w-full md:w-72">
+      <div class="form-image-wrapper md:rounded-xl rounded-t-xl w-full md:w-72">
          <div class="px-4 py-12 sm:px-6 lg:px-8">
             <nav class="flex justify-center" aria-label="Progress">
                <ol role="list" class="md:space-y-6 flex md:block items-center">
@@ -84,6 +84,7 @@ onMounted(() => {
    background-image: url("../assets/background-decoration.jpg");
    background-size: cover;
 }
+
 @media (max-width: 768px) {
    .form-image-wrapper {
       height: 100%;
