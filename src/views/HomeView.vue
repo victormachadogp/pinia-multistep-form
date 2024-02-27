@@ -1,5 +1,5 @@
 <template>
-   <main class="main shadow-lg">
+   <main class="main shadow-lg flex-col md:flex-row">
       <Stepper />
       <section class="form flex flex-col justify-between">
          <div class="">

@@ -1,9 +1,9 @@
 <template>
-   <div class="p-5">
-      <div class="form-image-wrapper rounded-xl">
+   <div class="md:p-5">
+      <div class="form-image-wrapper rounded-xl w-full md:w-72">
          <div class="px-4 py-12 sm:px-6 lg:px-8">
             <nav class="flex justify-center" aria-label="Progress">
-               <ol role="list" class="space-y-6">
+               <ol role="list" class="md:space-y-6 flex md:block items-center">
                   <li v-for="step in steps" :key="step.name">
                      <a v-if="step.status === 'complete'" :href="step.href" class="group">
                         <span class="flex items-start">
@@ -80,9 +80,15 @@ onMounted(() => {
 
 <style scoped>
 .form-image-wrapper {
-   width: 300px;
    height: 100%;
    background-image: url("../assets/background-decoration.jpg");
    background-size: cover;
+}
+@media (max-width: 768px) {
+   .form-image-wrapper {
+      height: 100%;
+      background-image: url("../assets/almond_blossom-mobile.jpg");
+      background-size: cover;
+   }
 }
 </style>
