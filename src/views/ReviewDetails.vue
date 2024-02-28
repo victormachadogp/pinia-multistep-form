@@ -173,4 +173,14 @@ const truncatedMessage = computed(() => {
 .active svg {
    @apply visible;
 }
+
+.form {
+   margin: 0 1.5rem;
+}
+
+@media (media: 768px) {
+   .form {
+      margin: inherit;
+   }
+}
 </style>
