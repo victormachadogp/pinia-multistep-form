@@ -27,6 +27,7 @@ body {
    flex-direction: column;
    justify-content: center;
    margin-top: 5rem;
+   margin-bottom: 5rem;
    background-color: white;
    border-radius: 10px;
    margin-left: 1rem;
@@ -42,6 +43,7 @@ body {
    .main {
       display: flex;
       margin-top: inherit;
+      margin-bottom: inherit;
       flex-direction: row;
       justify-content: center;
       height: 650px;
