@@ -5,7 +5,7 @@
             <nav class="flex md:justify-center justify-start pl-3" aria-label="Progress">
                <ol role="list" class="md:space-y-6 flex md:block md:items-center md:flex-row flex-col items-start space-y-3">
                   <li v-for="step in steps" :key="step.name">
-                     <a v-if="step.status === 'complete'" class="group">
+                     <router-link v-if="step.status === 'complete'" :to="step.href" class="group">
                         <span class="flex items-start">
                            <span class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center">
                               <span class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center">
@@ -25,22 +25,22 @@
                            </span>
                            <span class="ml-3 text-sm font-medium text-white group-hover:text-gray-300">{{ step.name }}</span>
                         </span>
-                     </a>
-                     <a v-else-if="step.status === 'current'" class="flex items-start" aria-current="step">
+                     </router-link>
+                     <router-link v-else-if="step.status === 'current'" :to="step.href" class="flex items-start" aria-current="step">
                         <span class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center" aria-hidden="true">
                            <span class="absolute h-4 w-4 rounded-full bg-white" />
                            <span class="relative block h-2 w-2 rounded-full bg-cyan-500" />
                         </span>
                         <span class="ml-3 text-sm font-medium text-white">{{ step.name }}</span>
-                     </a>
-                     <a v-else class="group">
+                     </router-link>
+                     <router-link v-else :to="step.href" class="group">
                         <div class="flex items-start">
                            <div class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center" aria-hidden="true">
                               <div class="h-2 w-2 rounded-full bg-gray-300 group-hover:bg-gray-400" />
                            </div>
                            <p class="ml-3 text-sm font-medium text-gray-300 group-hover:text-gray-100">{{ step.name }}</p>
                         </div>
-                     </a>
+                     </router-link>
                   </li>
                </ol>
             </nav>
