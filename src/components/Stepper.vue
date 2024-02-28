@@ -2,8 +2,8 @@
    <div class="md:p-5">
       <div class="form-image-wrapper md:rounded-xl rounded-t-xl w-full md:w-72">
          <div class="px-4 py-12 sm:px-6 lg:px-8">
-            <nav class="flex justify-center" aria-label="Progress">
-               <ol role="list" class="md:space-y-6 flex md:block items-center">
+            <nav class="flex md:justify-center justify-start pl-3" aria-label="Progress">
+               <ol role="list" class="md:space-y-6 flex md:block md:items-center md:flex-row flex-col items-start space-y-3">
                   <li v-for="step in steps" :key="step.name">
                      <a v-if="step.status === 'complete'" :href="step.href" class="group">
                         <span class="flex items-start">
