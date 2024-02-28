@@ -5,7 +5,7 @@
             <nav class="flex md:justify-center justify-start pl-3" aria-label="Progress">
                <ol role="list" class="md:space-y-6 flex md:block md:items-center md:flex-row flex-col items-start space-y-3">
                   <li v-for="step in steps" :key="step.name">
-                     <a v-if="step.status === 'complete'" :href="step.href" class="group">
+                     <a v-if="step.status === 'complete'" class="group">
                         <span class="flex items-start">
                            <span class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center">
                               <span class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center">
@@ -26,14 +26,14 @@
                            <span class="ml-3 text-sm font-medium text-white group-hover:text-gray-300">{{ step.name }}</span>
                         </span>
                      </a>
-                     <a v-else-if="step.status === 'current'" :href="step.href" class="flex items-start" aria-current="step">
+                     <a v-else-if="step.status === 'current'" class="flex items-start" aria-current="step">
                         <span class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center" aria-hidden="true">
                            <span class="absolute h-4 w-4 rounded-full bg-white" />
                            <span class="relative block h-2 w-2 rounded-full bg-cyan-500" />
                         </span>
                         <span class="ml-3 text-sm font-medium text-white">{{ step.name }}</span>
                      </a>
-                     <a v-else :href="step.href" class="group">
+                     <a v-else class="group">
                         <div class="flex items-start">
                            <div class="relative flex h-5 w-5 flex-shrink-0 items-center justify-center" aria-hidden="true">
                               <div class="h-2 w-2 rounded-full bg-gray-300 group-hover:bg-gray-400" />
