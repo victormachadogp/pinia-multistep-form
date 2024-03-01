@@ -26,6 +26,11 @@ const router = createRouter({
       path: '/review-details',
       name: 'review-details',
       component: () => import('../views/ReviewDetails.vue')
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: () => import('../views/SuccessView.vue')
     }
   ]
 })
