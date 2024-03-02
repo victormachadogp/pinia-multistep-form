@@ -161,7 +161,7 @@ const truncatedMessage = computed(() => {
    const words = message.value.split(" ")
    const maxWords = 10
 
-   return words.slice(0, maxWords).join(" ") + "..."
+   return words.length <= maxWords ? message.value : words.slice(0, maxWords).join(" ") + "..."
 })
 </script>
 
