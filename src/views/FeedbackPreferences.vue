@@ -62,7 +62,7 @@
                         </div>
                      </div>
                   </fieldset>
-                  <p v-if="errors.name" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.option }}</p>
+                  <p v-if="errors.option" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.option }}</p>
                </div>
             </div>
          </div>
