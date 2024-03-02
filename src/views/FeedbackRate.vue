@@ -153,12 +153,6 @@ import Stepper from "@/components/Stepper.vue"
 const formStore = useFormStore()
 
 const { subscriptionOption } = storeToRefs(formStore)
-
-const handleSubmit = () => {
-   formStore.updateName(location)
-
-   console.log(formStore.$state)
-}
 </script>
 
 

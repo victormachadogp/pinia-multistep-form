@@ -91,12 +91,6 @@ import Stepper from "@/components/Stepper.vue"
 const formStore = useFormStore()
 
 const { message, pickedOption } = storeToRefs(formStore)
-
-const handleSubmit = () => {
-   formStore.updateName(location)
-
-   console.log(formStore.$state)
-}
 </script>
 
 

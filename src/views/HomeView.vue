@@ -129,8 +129,6 @@ function validateForm(e) {
       errors.value.email = "Email is required"
       e.preventDefault()
    }
-
-   return Object.keys(errors.value).length === 0
 }
 </script>
 
