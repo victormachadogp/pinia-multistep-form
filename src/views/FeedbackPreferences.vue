@@ -17,7 +17,7 @@
                      rows="4"
                      name="comment"
                      id="comment"
-                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                     class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   ></textarea>
                </div>
 
@@ -62,6 +62,7 @@
                         </div>
                      </div>
                   </fieldset>
+                  <p v-if="errors.name" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.option }}</p>
                </div>
             </div>
          </div>
@@ -72,7 +73,7 @@
                      <button class="text-gray-400 mx-5 font-medium">Go Back</button>
                   </router-link>
                   <router-link to="/feedback-rate">
-                     <DynamicSubmitButton />
+                     <DynamicSubmitButton @click="validateForm" />
                   </router-link>
                </div>
             </div>
@@ -91,6 +92,17 @@ import Stepper from "@/components/Stepper.vue"
 const formStore = useFormStore()
 
 const { message, pickedOption } = storeToRefs(formStore)
+
+let errors = ref({})
+
+function validateForm(e) {
+   errors.value = {}
+
+   if (!pickedOption || /^\s*$/.test(pickedOption)) {
+      errors.value.option = "Please pick a option"
+      e.preventDefault()
+   }
+}
 </script>
 
 
