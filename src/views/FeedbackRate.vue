@@ -124,6 +124,7 @@
                      </label>
                   </div>
                </fieldset>
+               <p v-if="errors.options" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.option }}</p>
             </div>
          </div>
 
@@ -153,6 +154,17 @@ import Stepper from "@/components/Stepper.vue"
 const formStore = useFormStore()
 
 const { subscriptionOption } = storeToRefs(formStore)
+
+let errors = ref({})
+
+function validateForm(e) {
+   errors.value = {}
+
+   if (!pickedOption || /^\s*$/.test(pickedOption)) {
+      errors.value.option = "Please pick a option"
+      e.preventDefault()
+   }
+}
 </script>
 
 
