@@ -66,15 +66,20 @@ const route = useRoute()
 onMounted(() => {
    const currentStepIndex = steps.value.findIndex((step) => step.href === route.path)
 
-   // Set the current step to "current"
    if (currentStepIndex !== -1) {
+      // Set the current step to "current"
       steps.value[currentStepIndex].status = "current"
-   }
 
-   // Set all steps before the current step to "complete"
-   steps.value.slice(0, currentStepIndex).forEach((step) => {
-      step.status = "complete"
-   })
+      // Set all steps before the current step to "complete"
+      steps.value.slice(0, currentStepIndex).forEach((step) => {
+         step.status = "complete"
+      })
+   } else {
+      // If not on any of the specified pages, set all steps to "complete"
+      steps.value.forEach((step) => {
+         step.status = "complete"
+      })
+   }
 })
 </script>
 
