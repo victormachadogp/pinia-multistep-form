@@ -41,6 +41,7 @@
                         <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
                         <div class="mt-2.5">
                            <input
+                              data-cy="input-last-name"
                               v-model="lastName"
                               type="text"
                               name="last-name"
@@ -58,6 +59,7 @@
                         <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
                         <div class="mt-2.5">
                            <input
+                              data-cy="input-email"
                               v-model="email"
                               type="email"
                               name="email"
@@ -75,6 +77,7 @@
                         <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
                         <div class="mt-2.5">
                            <input
+                              data-cy="input-phone"
                               v-model="phone"
                               type="tel"
                               name="phone-number"
@@ -91,7 +94,7 @@
 
          <div class="mx-auto max-w-lg w-full pb-10">
             <div class="flex justify-end border-t border-gray-300 mt-12 md:mt-0">
-               <router-link class="mt-10" to="/feedback-preferences">
+               <router-link data-cy="submit" class="mt-10" to="/feedback-preferences">
                   <DynamicSubmitButton @click="validateForm" />
                </router-link>
             </div>
