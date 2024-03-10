@@ -23,6 +23,7 @@
                         <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
                         <div class="mt-2.5">
                            <input
+                              data-cy="input-name"
                               v-model="name"
                               type="text"
                               name="first-name"
