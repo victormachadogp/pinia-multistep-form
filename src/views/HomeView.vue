@@ -35,7 +35,7 @@
                               }"
                            />
                         </div>
-                        <p v-if="errors.name" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.name }}</p>
+                        <p data-cy="error-name" v-if="errors.name" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.name }}</p>
                      </div>
                      <div>
                         <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
