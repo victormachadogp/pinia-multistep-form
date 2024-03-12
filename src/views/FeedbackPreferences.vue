@@ -13,6 +13,7 @@
                <label for="comment" class="block text-sm font-medium leading-6 text-gray-900">Message</label>
                <div class="mt-2">
                   <textarea
+                     data-cy="input-message"
                      v-model="message"
                      rows="4"
                      name="comment"

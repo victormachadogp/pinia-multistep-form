@@ -20,3 +20,19 @@ describe('First Form', () => {
     cy.contains("Next Step").click()
   })
 })
+
+describe('Second Form', () => {
+  it('Fill all form fields', () => {
+    cy.visit('/feedback-preferences')
+    cy.contains('h1', 'Feedback & Preferences')
+
+    cy.get("[data-cy='input-message']")
+      .type("Some message with something inside");
+
+    cy.get('[type="radio"]').first().check()
+
+    cy.contains("Next Step").click()
+
+  })
+})
+
