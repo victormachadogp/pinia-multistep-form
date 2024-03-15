@@ -53,7 +53,9 @@
                               }"
                            />
                         </div>
-                        <p v-if="errors.lastName" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.lastName }}</p>
+                        <p data-cy="error-last-name" v-if="errors.lastName" class="mt-2 text-sm text-red-600 dark:text-red-500">
+                           {{ errors.lastName }}
+                        </p>
                      </div>
                      <div class="sm:col-span-1">
                         <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
@@ -71,7 +73,7 @@
                               }"
                            />
                         </div>
-                        <p v-if="errors.email" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.email }}</p>
+                        <p data-cy="error-email" v-if="errors.email" class="mt-2 text-sm text-red-600 dark:text-red-500">{{ errors.email }}</p>
                      </div>
                      <div class="sm:col-span-1">
                         <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>

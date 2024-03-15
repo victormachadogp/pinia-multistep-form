@@ -16,6 +16,11 @@ describe('Testing form', () => {
     cy.get("[data-cy='input-last-name']").clear()
     cy.contains('Next Step').click()
     cy.get('[data-cy="error-last-name"]').should('contain', 'Last name is required')
+
+    cy.log('Checking if email error appear')
+    cy.get("[data-cy='input-email']").clear()
+    cy.contains('Next Step').click()
+    cy.get('[data-cy="error-email"]').should('contain', 'Email is required')
   })
 
   it('Fill all form fields', () => {
