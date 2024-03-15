@@ -6,10 +6,16 @@ describe('Testing form', () => {
   })
 
   it('displays form validation', () => {
-    // clear out first name
+
+    cy.log('Checking if name error appear')
     cy.get("[data-cy='input-name']").clear()
     cy.contains('Next Step').click()
     cy.get('[data-cy="error-name"]').should('contain', 'First name is required')
+
+    cy.log('Checking if last name error appear')
+    cy.get("[data-cy='input-last-name']").clear()
+    cy.contains('Next Step').click()
+    cy.get('[data-cy="error-last-name"]').should('contain', 'Last name is required')
   })
 
   it('Fill all form fields', () => {
