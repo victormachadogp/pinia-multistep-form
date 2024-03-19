@@ -11,6 +11,7 @@ const user =  {
       email: ref(''),
       phone: ref(''),
       data: {
+         message: ref(''),
          pickedOption: ref(''),
          subscriptionOption: ref(''),
          updatingInfo: ref(''),
@@ -32,7 +33,7 @@ const user =  {
    }
 
    const fullName = computed(() => {
-      return `${name.value} ${lastName.value}`
+      return `${user.name.value} ${user.lastName.value}`
    });
 
    const $reset = function () {

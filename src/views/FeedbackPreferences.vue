@@ -14,7 +14,7 @@
                <div class="mt-2">
                   <textarea
                      data-cy="input-message"
-                     v-model="user.message"
+                     v-model="user.data.message"
                      rows="4"
                      name="comment"
                      id="comment"

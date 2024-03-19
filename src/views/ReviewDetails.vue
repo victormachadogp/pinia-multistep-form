@@ -32,7 +32,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Email</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ email }}</span>
+                           <span class="flex-grow">{{ user.email }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/">
                                  <button
@@ -49,7 +49,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Phone</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ phone }}</span>
+                           <span class="flex-grow">{{ user.phone }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/">
                                  <button
@@ -84,7 +84,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Notification</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ pickedOption }}</span>
+                           <span class="flex-grow">{{ user.data.pickedOption }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/feedback-preferences">
                                  <button
@@ -102,7 +102,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Feedback Rate</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ subscriptionOption }}</span>
+                           <span class="flex-grow">{{ user.data.subscriptionOption }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/feedback-rate">
                                  <button
@@ -152,18 +152,31 @@ import axios from "axios"
 
 const formStore = useFormStore()
 
-const { name, lastName, email, phone, message, pickedOption, subscriptionOption, updatingInfo, fullName } = storeToRefs(formStore)
-
 const updateInfo = function () {
    updatingInfo.value = true
 }
 
+const { fullName } = storeToRefs(formStore)
+
+const user = formStore.user
+
+console.log(user.data.message)
+
 const truncatedMessage = computed(() => {
-   const words = message.value.split(" ")
+   const words = user.data.message.split(" ")
    const maxWords = 10
 
-   return words.length <= maxWords ? message.value : words.slice(0, maxWords).join(" ") + "..."
+   return words.length <= maxWords ? user.data.message : words.slice(0, maxWords).join(" ") + "..."
 })
+
+axios
+   .post("http://localhost:4137/api/user", formStore)
+   .then((response) => {
+      console.log("Resposta da API:", response.data)
+   })
+   .catch((error) => {
+      console.error("Erro ao enviar dados:", error)
+   })
 </script>
 
 <style scoped>
