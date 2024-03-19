@@ -3,9 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useFormStore = defineStore('form', () => {
 
-
-
-const user =  {
+   const user = {
       name: ref(''),
       lastName: ref(''),
       email: ref(''),
@@ -18,16 +16,6 @@ const user =  {
       }
    }
 
-
-   const name = ref('')
-   const lastName = ref('')
-   const email = ref('')
-   const phone = ref('')
-   const message = ref('')
-   const pickedOption = ref('')
-   const subscriptionOption = ref('')
-   const updatingInfo = ref('')
-
    function updateName(e) {
       name.value = e
    }
@@ -37,25 +25,15 @@ const user =  {
    });
 
    const $reset = function () {
-      name.value = ref(" ")
-      lastName.value = ref('')
-      email.value = ref('')
-      phone.value = ref('')
-      message.value = ref('')
-      pickedOption.value = ref('')
-      subscriptionOption.value = ref('')
-      updatingInfo.value = ref('')
+      user.name = '';
+      user.lastName = '';
+      user.email = '';
+      user.phone = '';
+      user.data.message = '';
+      user.data.pickedOption = '';
+      user.data.subscriptionOption = '';
+      user.data.updatingInfo = '';
    }
 
-   return { user, name, lastName, email, phone, message, pickedOption, subscriptionOption, updatingInfo, updateName, fullName, $reset }
+   return { user, updateName, fullName, $reset }
 })
-
-// {
-//    user: {
-//            fullName:" ",
-//            email:" ",
-//            phone:" "
-//        }
-//    notification: " ",
-   
-// }
