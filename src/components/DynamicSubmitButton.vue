@@ -29,10 +29,12 @@ import { storeToRefs } from "pinia"
 
 const formStore = useFormStore()
 
+let { updatingInfo } = storeToRefs(formStore)
+
 const user = formStore.user
 
 const handleSubmitFunction = function () {
-   user.data.updatingInfo = false
+   updatingInfo = false
 }
 </script>
 

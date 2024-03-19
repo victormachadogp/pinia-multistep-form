@@ -152,11 +152,11 @@ import axios from "axios"
 
 const formStore = useFormStore()
 
+let { fullName, updatingInfo } = storeToRefs(formStore)
+
 const updateInfo = function () {
    updatingInfo.value = true
 }
-
-const { fullName } = storeToRefs(formStore)
 
 const user = formStore.user
 

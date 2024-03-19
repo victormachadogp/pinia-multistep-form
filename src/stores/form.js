@@ -12,13 +12,10 @@ export const useFormStore = defineStore('form', () => {
          message: ref(''),
          pickedOption: ref(''),
          subscriptionOption: ref(''),
-         updatingInfo: ref(''),
       }
    }
 
-   function updateName(e) {
-      name.value = e
-   }
+   const updatingInfo = ref('')
 
    const fullName = computed(() => {
       return `${user.name.value} ${user.lastName.value}`
@@ -32,8 +29,7 @@ export const useFormStore = defineStore('form', () => {
       user.data.message = '';
       user.data.pickedOption = '';
       user.data.subscriptionOption = '';
-      user.data.updatingInfo = '';
    }
 
-   return { user, updateName, fullName, $reset }
+   return { user, updatingInfo, fullName, $reset }
 })

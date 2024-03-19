@@ -155,8 +155,6 @@ const formStore = useFormStore()
 
 const user = formStore.user
 
-console.log(user)
-
 let errors = ref({})
 
 function validateForm(e) {
