@@ -46,7 +46,11 @@ import Stepper from "@/components/Stepper.vue"
 const formStore = useFormStore()
 const router = useRouter()
 
-const { name, lastName, email, phone, $reset } = storeToRefs(formStore)
+const { updatingInfo, $reset } = storeToRefs(formStore)
+
+function updateInfo() {
+   updatingInfo.value = false
+}
 
 const handleSubmit = () => {
    formStore.updateName(name)
@@ -56,6 +60,7 @@ const handleSubmit = () => {
 
 const resetAndNavigate = () => {
    formStore.$reset()
+   updateInfo()
 
    router.push({ path: "/" })
 }

@@ -16,8 +16,8 @@
                         <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
                         <div class="mt-2.5">
                            <input
-                              data-cy="input-name"
                               v-model="user.name"
+                              data-cy="input-name"
                               type="text"
                               name="first-name"
                               id="first-name"
@@ -34,8 +34,8 @@
                         <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
                         <div class="mt-2.5">
                            <input
-                              data-cy="input-last-name"
                               v-model="user.lastName"
+                              data-cy="input-last-name"
                               type="text"
                               name="last-name"
                               id="last-name"
@@ -54,8 +54,8 @@
                         <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
                         <div class="mt-2.5">
                            <input
-                              data-cy="input-email"
                               v-model="user.email"
+                              data-cy="input-email"
                               type="email"
                               name="email"
                               id="email"
@@ -72,8 +72,8 @@
                         <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
                         <div class="mt-2.5">
                            <input
-                              data-cy="input-phone"
                               v-model="user.phone"
+                              data-cy="input-phone"
                               type="tel"
                               name="phone-number"
                               id="phone-number"
@@ -107,15 +107,18 @@ import Stepper from "@/components/Stepper.vue"
 
 const formStore = useFormStore()
 
-let errors = ref({})
-
 const user = formStore.user
+
+// const { user } = storeToRefs(formStore)
+
+let errors = ref({})
 
 function validateForm(e) {
    errors.value = {}
 
    if (!user.name || /^\s*$/.test(user.name)) {
       errors.value.name = "First name is required"
+      console.log(user.name)
       e.preventDefault()
    }
 

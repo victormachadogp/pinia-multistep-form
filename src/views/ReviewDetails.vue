@@ -160,8 +160,6 @@ const updateInfo = function () {
 
 const user = formStore.user
 
-console.log(user.data.message)
-
 const truncatedMessage = computed(() => {
    const words = user.data.message.split(" ")
    const maxWords = 10
@@ -172,10 +170,10 @@ const truncatedMessage = computed(() => {
 axios
    .post("http://localhost:4137/api/user", formStore)
    .then((response) => {
-      console.log("Resposta da API:", response.data)
+      // console.log("Resposta da API:", response.data)
    })
    .catch((error) => {
-      console.error("Erro ao enviar dados:", error)
+      // console.error("Erro ao enviar dados:", error)
    })
 </script>
 

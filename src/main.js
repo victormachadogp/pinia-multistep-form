@@ -14,12 +14,12 @@ app.use(router)
 
 app.mount('#app')
 
-if(localStorage.getItem("state")) {
-    pinia.state.value = JSON.parse(localStorage.getItem("state"))
-  }
+if (localStorage.getItem("state")) {
+  pinia.state.value = JSON.parse(localStorage.getItem("state"))
+}
 
-  watch(pinia.state, (state) => {
-    localStorage.setItem("state", JSON.stringify(state))
-  },
-  {deep: true}
+watch(pinia.state, (state) => {
+  localStorage.setItem("state", JSON.stringify(state))
+},
+  { deep: true }
 )
