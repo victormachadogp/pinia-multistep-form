@@ -24,7 +24,7 @@
                         <div class="mt-2.5">
                            <input
                               data-cy="input-name"
-                              v-model="name"
+                              v-model="user.name"
                               type="text"
                               name="first-name"
                               id="first-name"
@@ -42,7 +42,7 @@
                         <div class="mt-2.5">
                            <input
                               data-cy="input-last-name"
-                              v-model="lastName"
+                              v-model="user.lastName"
                               type="text"
                               name="last-name"
                               id="last-name"
@@ -62,7 +62,7 @@
                         <div class="mt-2.5">
                            <input
                               data-cy="input-email"
-                              v-model="email"
+                              v-model="user.email"
                               type="email"
                               name="email"
                               id="email"
@@ -80,7 +80,7 @@
                         <div class="mt-2.5">
                            <input
                               data-cy="input-phone"
-                              v-model="phone"
+                              v-model="user.phone"
                               type="tel"
                               name="phone-number"
                               id="phone-number"
@@ -116,22 +116,22 @@ const formStore = useFormStore()
 
 let errors = ref({})
 
-const { name, lastName, email, phone } = storeToRefs(formStore)
+const user = formStore.user
 
 function validateForm(e) {
    errors.value = {}
 
-   if (!name.value || /^\s*$/.test(name.value)) {
+   if (!user.name || /^\s*$/.test(user.name)) {
       errors.value.name = "First name is required"
       e.preventDefault()
    }
 
-   if (!lastName.value || /^\s*$/.test(lastName.value)) {
+   if (!user.lastName || /^\s*$/.test(user.lastName)) {
       errors.value.lastName = "Last name is required"
       e.preventDefault()
    }
 
-   if (!email.value || /^\s*$/.test(email.value)) {
+   if (!user.email || /^\s*$/.test(user.email)) {
       errors.value.email = "Email is required"
       e.preventDefault()
    }

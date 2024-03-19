@@ -2,6 +2,22 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useFormStore = defineStore('form', () => {
+
+
+
+const user =  {
+      name: ref(''),
+      lastName: ref(''),
+      email: ref(''),
+      phone: ref(''),
+      data: {
+         pickedOption: ref(''),
+         subscriptionOption: ref(''),
+         updatingInfo: ref(''),
+      }
+   }
+
+
    const name = ref('')
    const lastName = ref('')
    const email = ref('')
@@ -30,5 +46,15 @@ export const useFormStore = defineStore('form', () => {
       updatingInfo.value = ref('')
    }
 
-   return { name, lastName, email, phone, message, pickedOption, subscriptionOption, updatingInfo, updateName, fullName, $reset }
+   return { user, name, lastName, email, phone, message, pickedOption, subscriptionOption, updatingInfo, updateName, fullName, $reset }
 })
+
+// {
+//    user: {
+//            fullName:" ",
+//            email:" ",
+//            phone:" "
+//        }
+//    notification: " ",
+   
+// }
