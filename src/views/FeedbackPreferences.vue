@@ -14,7 +14,7 @@
                <div class="mt-2">
                   <textarea
                      data-cy="input-message"
-                     v-model="message"
+                     v-model="user.message"
                      rows="4"
                      name="comment"
                      id="comment"
@@ -30,7 +30,7 @@
                      <div class="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
                         <div class="flex items-center">
                            <input
-                              v-model="pickedOption"
+                              v-model="user.data.pickedOption"
                               id="email"
                               name="notification-method"
                               type="radio"
@@ -41,7 +41,7 @@
                         </div>
                         <div class="flex items-center">
                            <input
-                              v-model="pickedOption"
+                              v-model="user.data.pickedOption"
                               id="sms"
                               name="notification-method"
                               value="SMS"
@@ -52,7 +52,7 @@
                         </div>
                         <div class="flex items-center">
                            <input
-                              v-model="pickedOption"
+                              v-model="user.data.pickedOption"
                               id="no-contact"
                               name="notification-method"
                               value="No Notifications"
@@ -92,14 +92,14 @@ import Stepper from "@/components/Stepper.vue"
 
 const formStore = useFormStore()
 
-const { message, pickedOption } = storeToRefs(formStore)
+const user = formStore.user
 
 let errors = ref({})
 
 function validateForm(e) {
    errors.value = {}
 
-   if (!pickedOption || /^\s*$/.test(pickedOption)) {
+   if (!user.data.pickedOption || /^\s*$/.test(user.data.pickedOption)) {
       errors.value.option = "Please pick a option"
       e.preventDefault()
    }
