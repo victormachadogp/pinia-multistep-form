@@ -12,13 +12,6 @@
             <form action="#" method="POST" class="px-6 lg:px-8 pt-10">
                <div class="mx-auto max-w-lg">
                   <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                     <!-- <p v-if="errors.length">
-                        <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
-                        <ul>
-                           <li v-for="error in errors" :key="error">{{ error }}</li>
-                        </ul>
-                     </p> -->
-
                      <div>
                         <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
                         <div class="mt-2.5">
