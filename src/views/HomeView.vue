@@ -90,7 +90,7 @@
          <div class="mx-auto max-w-lg w-full pb-10">
             <div class="flex justify-end border-t border-gray-300 mt-12 md:mt-0">
                <router-link data-cy="submit" class="mt-10" to="/feedback-preferences">
-                  <DynamicSubmitButton />
+                  <DynamicSubmitButton @click="validateForm" />
                </router-link>
             </div>
          </div>
@@ -111,26 +111,24 @@ const { formData } = storeToRefs(formStore)
 
 let errors = ref({})
 
-//e) {
-//    errors.value = {}
+function validateForm(e) {
+   errors.value = {}
 
-//    if (!user.name || /^\s*$/.test(user.name)) {
-//       errors.value.name = "First name is required"
-//       console.log(user.name)
-//       e.preventDefault()
-//    }
+   if (!formData.value.personalInfo.name || /^\s*$/.test(formData.value.personalInfo.name)) {
+      errors.value.name = "First name is required"
+      e.preventDefault()
+   }
 
-//    if (!user.lastName || /^\s*$/.test(user.lastName)) {
-//       errors.value.lastName = "Last name is required"
-//       e.preventDefault()
-//    }
+   if (!formData.value.personalInfo.lastName || /^\s*$/.test(formData.value.personalInfo.lastName)) {
+      errors.value.lastName = "Last name is required"
+      e.preventDefault()
+   }
 
-//    if (!user.email || /^\s*$/.test(user.email)) {
-//       errors.value.email = "Email is required"
-//       e.preventDefault()
-//    }
-// }
-//
+   if (!formData.value.personalInfo.email || /^\s*$/.test(formData.value.personalInfo.email)) {
+      errors.value.email = "Email is required"
+      e.preventDefault()
+   }
+}
 </script>
 
 
