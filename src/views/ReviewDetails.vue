@@ -32,7 +32,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Email</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ user.email }}</span>
+                           <span class="flex-grow">{{ formData.personalInfo.email }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/">
                                  <button
@@ -49,7 +49,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Phone</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ user.phone }}</span>
+                           <span class="flex-grow">{{ formData.personalInfo.phone }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/">
                                  <button
@@ -84,7 +84,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Notification</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ user.data.pickedOption }}</span>
+                           <span class="flex-grow">{{ formData.notification }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/feedback-preferences">
                                  <button
@@ -102,7 +102,7 @@
                      <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Feedback Rate</dt>
                         <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                           <span class="flex-grow">{{ user.data.subscriptionOption }}</span>
+                           <span class="flex-grow">{{ formData.feedback.rating }}</span>
                            <span class="ml-4 flex-shrink-0">
                               <router-link to="/feedback-rate">
                                  <button
@@ -152,25 +152,36 @@ import axios from "axios"
 
 const formStore = useFormStore()
 
-let { fullName, updatingInfo } = storeToRefs(formStore)
+let { formData } = storeToRefs(formStore)
 
 const updateInfo = function () {
    updatingInfo.value = true
 }
 
-const user = formStore.user
-
-const truncatedMessage = computed(() => {
-   const words = user.data.message.split(" ")
-   const maxWords = 10
-
-   return words.length <= maxWords ? user.data.message : words.slice(0, maxWords).join(" ") + "..."
+const fullName = computed(() => {
+   return `${formData.value.personalInfo.name} ${formData.value.personalInfo.lastName}`
 })
 
+const truncatedMessage = computed(() => {
+   const words = formData.feedback.message.split(" ")
+   const maxWords = 10
+
+   return words.length <= maxWords ? formData.feedback.message : words.slice(0, maxWords).join(" ") + "..."
+})
+
+// const payload = {
+//    user: {
+//       full_name: fullName,
+//       email: user.email,
+//       phone: user.phone,
+//    },
+//    feedback_message: user.data.message,
+// }
+
 axios
-   .post("http://localhost:4137/api/user", formStore)
+   .post("http://localhost:4137/api/user", { users: {} })
    .then((response) => {
-      // console.log("Resposta da API:", response.data)
+      // console.log("Resposta da API:", response.data.mensagem)
    })
    .catch((error) => {
       // console.error("Erro ao enviar dados:", error)
