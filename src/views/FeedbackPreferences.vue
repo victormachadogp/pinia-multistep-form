@@ -99,7 +99,7 @@ let errors = ref({})
 function validateForm(e) {
    errors.value = {}
 
-   if (!formData.notification || /^\s*$/.test(formData.notification)) {
+   if (!formData.value.notification || /^\s*$/.test(formData.value.notification)) {
       errors.value.option = "Please pick a option"
       e.preventDefault()
    }
