@@ -16,11 +16,11 @@
                   <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
                      <!-- Active: "border-indigo-600 ring-2 ring-indigo-600", Not Active: "border-gray-300" -->
                      <label
-                        :class="{ active: user.data.subscriptionOption === 'Fair' }"
+                        :class="{ active: formData.feedback.rating === 'Fair' }"
                         class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                      >
                         <input
-                           v-model="user.data.subscriptionOption"
+                           v-model="formData.feedback.rating"
                            type="radio"
                            name="feedback-rating"
                            value="Fair"
@@ -52,11 +52,11 @@
                      </label>
                      <!-- Active: "border-indigo-600 ring-2 ring-indigo-600", Not Active: "border-gray-300" -->
                      <label
-                        :class="{ active: user.data.subscriptionOption === 'Good' }"
+                        :class="{ active: formData.feedback.rating === 'Good' }"
                         class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                      >
                         <input
-                           v-model="user.data.subscriptionOption"
+                           v-model="formData.feedback.rating"
                            type="radio"
                            name="feedback-rating"
                            value="Good"
@@ -88,11 +88,11 @@
                      </label>
                      <!-- Active: "border-indigo-600 ring-2 ring-indigo-600", Not Active: "border-gray-300" -->
                      <label
-                        :class="{ active: user.data.subscriptionOption === 'Excellent' }"
+                        :class="{ active: formData.feedback.rating === 'Excellent' }"
                         class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                      >
                         <input
-                           v-model="user.data.subscriptionOption"
+                           v-model="formData.feedback.rating"
                            type="radio"
                            name="feedback-rating"
                            value="Excellent"
@@ -153,7 +153,7 @@ import Stepper from "@/components/Stepper.vue"
 
 const formStore = useFormStore()
 
-const user = formStore.user
+const { formData } = storeToRefs(formStore)
 
 let errors = ref({})
 
