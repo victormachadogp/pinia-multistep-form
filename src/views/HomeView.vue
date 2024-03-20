@@ -16,7 +16,7 @@
                         <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
                         <div class="mt-2.5">
                            <input
-                              v-model="user.name"
+                              v-model="formData.personalInfo.name"
                               data-cy="input-name"
                               type="text"
                               name="first-name"
@@ -34,7 +34,7 @@
                         <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
                         <div class="mt-2.5">
                            <input
-                              v-model="user.lastName"
+                              v-model="formData.personalInfo.lastName"
                               data-cy="input-last-name"
                               type="text"
                               name="last-name"
@@ -54,7 +54,7 @@
                         <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
                         <div class="mt-2.5">
                            <input
-                              v-model="user.email"
+                              v-model="formData.personalInfo.email"
                               data-cy="input-email"
                               type="email"
                               name="email"
@@ -72,7 +72,7 @@
                         <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
                         <div class="mt-2.5">
                            <input
-                              v-model="user.phone"
+                              v-model="formData.personalInfo.phone"
                               data-cy="input-phone"
                               type="tel"
                               name="phone-number"
@@ -90,7 +90,7 @@
          <div class="mx-auto max-w-lg w-full pb-10">
             <div class="flex justify-end border-t border-gray-300 mt-12 md:mt-0">
                <router-link data-cy="submit" class="mt-10" to="/feedback-preferences">
-                  <DynamicSubmitButton @click="validateForm" />
+                  <DynamicSubmitButton />
                </router-link>
             </div>
          </div>
@@ -107,31 +107,30 @@ import Stepper from "@/components/Stepper.vue"
 
 const formStore = useFormStore()
 
-const user = formStore.user
-
-// const { user } = storeToRefs(formStore)
+const { formData } = storeToRefs(formStore)
 
 let errors = ref({})
 
-function validateForm(e) {
-   errors.value = {}
+//e) {
+//    errors.value = {}
 
-   if (!user.name || /^\s*$/.test(user.name)) {
-      errors.value.name = "First name is required"
-      console.log(user.name)
-      e.preventDefault()
-   }
+//    if (!user.name || /^\s*$/.test(user.name)) {
+//       errors.value.name = "First name is required"
+//       console.log(user.name)
+//       e.preventDefault()
+//    }
 
-   if (!user.lastName || /^\s*$/.test(user.lastName)) {
-      errors.value.lastName = "Last name is required"
-      e.preventDefault()
-   }
+//    if (!user.lastName || /^\s*$/.test(user.lastName)) {
+//       errors.value.lastName = "Last name is required"
+//       e.preventDefault()
+//    }
 
-   if (!user.email || /^\s*$/.test(user.email)) {
-      errors.value.email = "Email is required"
-      e.preventDefault()
-   }
-}
+//    if (!user.email || /^\s*$/.test(user.email)) {
+//       errors.value.email = "Email is required"
+//       e.preventDefault()
+//    }
+// }
+//
 </script>
 
 
