@@ -6,7 +6,7 @@ export const useFormStore = defineStore('userForm', () => {
    const formData = ref({
 
       personalInfo: {
-         name: 'Nice',
+         name: '',
          lastName: '',
          email: '',
          phone: '',
