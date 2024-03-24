@@ -19,18 +19,6 @@ export const useFormStore = defineStore('userForm', () => {
    }
    )
 
-   // const user = ref({
-   //    name: '',
-   //    lastName: '',
-   //    email: '',
-   //    phone: '',
-   //    data: {
-   //       message: '',
-   //       pickedOption: '',
-   //       subscriptionOption: '',
-   //    }
-   // })
-
    // const updatingInfo = ref('')
 
    // const fullName = computed(() => {
