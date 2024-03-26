@@ -166,7 +166,7 @@ const truncatedMessage = computed(() => {
    const words = formData.value.feedback.message.split(" ")
    const maxWords = 10
 
-   return words.length <= maxWords ? formData.feedback.message : words.slice(0, maxWords).join(" ") + "..."
+   return words.length <= maxWords ? formData.value.feedback.message : words.slice(0, maxWords).join(" ") + "..."
 })
 
 // const payload = {
