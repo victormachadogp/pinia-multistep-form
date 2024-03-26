@@ -169,22 +169,29 @@ const truncatedMessage = computed(() => {
    return words.length <= maxWords ? formData.value.feedback.message : words.slice(0, maxWords).join(" ") + "..."
 })
 
-// const payload = {
-//    user: {
-//       full_name: fullName,
-//       email: user.email,
-//       phone: user.phone,
-//    },
-//    feedback_message: user.data.message,
-// }
+const payload = {
+   personal_info: {
+      name: formData.value.personalInfo.name,
+      last_name: formData.value.personalInfo.lastName,
+      email: formData.value.personalInfo.email,
+      phone: formData.value.personalInfo.phone,
+   },
+   feedback: {
+      message: formData.value.feedback.message,
+      rating: formData.value.feedback.rating,
+   },
+   notification: formData.value.notification,
+}
+
+console.log(payload)
 
 axios
-   .post("http://localhost:4137/api/user", { users: {} })
+   .post("http://localhost:4137/api/user", payload)
    .then((response) => {
-      // console.log("Resposta da API:", response.data.mensagem)
+      console.log("Resposta da API:", response.data.mensagem)
    })
    .catch((error) => {
-      // console.error("Erro ao enviar dados:", error)
+      console.error("Erro ao enviar dados:", error)
    })
 </script>
 
